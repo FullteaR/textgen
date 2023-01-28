@@ -4,7 +4,7 @@ RUN pip install --upgrade pip setuptools
 RUN pip install git+https://github.com/huggingface/transformers
 RUN pip install jupyter\
 	transformers\
-	sentencepieces
+	sentencepiece
 	
 RUN git clone https://github.com/huggingface/transformers /transformers
 
