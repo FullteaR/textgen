@@ -1,0 +1,15 @@
+version: '3'
+services:
+        textgen:
+               build:
+                       context: .
+               image: frt/textgen
+               container_name: textgen
+               ports:
+                       - 127.0.0.1:18888:8888
+               volumes:
+                       - ./src:/mnt
+               #runtime: nvidia
+               environment:
+                        - NVIDIA_VISIBLE_DEVICES=all
+                        - NVIDIA_DRIVER_CAPABILITIES=all
