@@ -1,8 +1,12 @@
 FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-devel
 RUN apt update && apt upgrade -y
+RUN pip install --upgrade pip setuptools
+RUN pip install git+https://github.com/huggingface/transformers
 RUN pip install jupyter\
 	transformers\
-	SentencePiece
+	sentencepieces
+	
+RUN git clone https://github.com/huggingface/transformers /transformers
 
 RUN mkdir -p /root/.jupyter && touch /root/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /root/.jupyter/jupyter_notebook_config.py && \
