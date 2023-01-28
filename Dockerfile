@@ -1,7 +1,7 @@
 FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-devel
 RUN apt update && apt upgrade -y && apt install -y git
 RUN pip install --upgrade pip setuptools
-RUN pip install git+https://github.com/FullteaR/transformers
+RUN pip install git+https://github.com/huggingface/transformers
 RUN pip install jupyter\
 	transformers\
 	sentencepiece\
@@ -10,7 +10,7 @@ RUN pip install jupyter\
 	sklearn\
 	scikit-learn
 	
-RUN git clone https://github.com/FullteaR/transformers /transformers
+RUN git clone https://github.com/huggingface/transformers /transformers
 
 ENV PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:1000
 
