@@ -9,7 +9,7 @@ services:
                        - 127.0.0.1:18888:8888
                volumes:
                        - ./src:/mnt
-               #runtime: nvidia
+               runtime: nvidia
                environment:
-                        - NVIDIA_VISIBLE_DEVICES=all
+                        - NVIDIA_VISIBLE_DEVICES=1
                         - NVIDIA_DRIVER_CAPABILITIES=all
