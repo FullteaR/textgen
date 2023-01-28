@@ -1,5 +1,5 @@
 FROM pytorch/pytorch:1.13.1-cuda11.6-cudnn8-devel
-RUN apt update && apt upgrade -y
+RUN apt update && apt upgrade -y && apt install -y git
 RUN pip install --upgrade pip setuptools
 RUN pip install git+https://github.com/huggingface/transformers
 RUN pip install jupyter\
