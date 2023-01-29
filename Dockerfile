@@ -7,7 +7,6 @@ RUN pip install jupyter\
 	sentencepiece\
 	datasets\
 	evaluate\
-	sklearn\
 	scikit-learn
 	
 RUN git clone https://github.com/huggingface/transformers /transformers
